@@ -139,7 +139,7 @@ public class DVDRentalSystem {
 					System.out.println(name+" information deleted successfully !");
 					tag=true;
 					break;
-				}else if (customer_record[i][0].equals(name) && customer_record[i][4] !=null){					
+				} else if (customer_record[i][0].equals(name) && customer_record[i][4] !=null){					
 					System.out.println(name + " has rented item");
 					tag=true;
 					break;
@@ -163,32 +163,31 @@ public class DVDRentalSystem {
 		modifiedName = input.nextLine();
 
 		for(int i = 0; i < maxCustomer; i++){
-				if (customer_record[i][0].equals(name)) {
+			if (customer_record[i][0].equals(name)) {
 					
-					customer_record[i][0] = modifiedName;
-					customer_record[i][1] = Address;
-					customer_record[i][2] = phoneNumber;
-					customer_record[i][3] = enrollingDate;
+				customer_record[i][0] = modifiedName;
+				customer_record[i][1] = Address;
+				customer_record[i][2] = phoneNumber;
+				customer_record[i][3] = enrollingDate;
 					
-					System.out.println("Name:  ");
-					name = input.nextLine();
+				System.out.println("Name:  ");
+				name = input.nextLine();
 					
-					System.out.println("Address: ");
-					Address = input.nextLine();
+				System.out.println("Address: ");
+				Address = input.nextLine();
 					
-					System.out.println("Phone Number: ");
-					phoneNumber = input.nextLine();
+				System.out.println("Phone Number: ");
+				phoneNumber = input.nextLine();
 					
-					System.out.println("Date: ");
-					enrollingDate = input.nextLine();
+				System.out.println("Date: ");
+				enrollingDate = input.nextLine();
 					
-					System.out.println(name+ " " + Address + " " + phoneNumber + " " + enrollingDate + 
+				System.out.println(name+ " " + Address + " " + phoneNumber + " " + enrollingDate + 
 							" information modified successfully !");
-					break;
-				}else{
-						continue;
-				}
-					
+				break;
+			}else{
+				continue;
+			}	
 
 		}
 	}
@@ -205,31 +204,33 @@ public class DVDRentalSystem {
 				for(int k = 0; k < 4; k++){
 					if(dvd_cd_list[i][j][k] == null)
 						
-		System.out.print("Title: ");
-		Title = input.nextLine();
+						System.out.print("Title: ");
+						Title = input.nextLine();
+			
+						System.out.println("\t Company: ");
+						Company = input.nextLine();
 		
-		System.out.println("\t Company: ");
-		Company = input.nextLine();
+						System.out.println("\t Release date: ");
+						Release_Date = input.nextLine();
 		
-		System.out.println("\t Release date: ");
-		Release_Date = input.nextLine();
-		
-		System.out.println("\t Borrowed date: ");
-		Borrowed_Date = customer_record[i][4];
+						System.out.println("\t Borrowed date: ");
+						Borrowed_Date = customer_record[i][4];
 		
 				}
 				
-				System.out.println("Input DVD names: ");
-				disk = input.nextLine();
+					System.out.println("Input DVD names: ");
+					disk = input.nextLine();
 			}
 			
 				System.out.println("DVD or CD");
-				if(disk.equals(0))
+		
+				if(disk.equals(0)){
 					System.out.println("DVD");
-				else if(disk.equals(1))
+				} else if(disk.equals(1)){
 					System.out.println("CD");
-			}
+				}
 		}
+	}
 	
 	public static void rentalDvdCd(){
 		Scanner input = new Scanner(System.in);
@@ -238,23 +239,24 @@ public class DVDRentalSystem {
 		name = input.nextLine();
 		
 		System.out.println("Are you an existing customer ? ");
+
 		for(int i = 0; i < 500; i++){
-				if(customer_record[i][4] != null)
-			System.out.println(name + ", Customer exists !!");
+			if(customer_record[i][4] != null)
+				System.out.println(name + ", Customer exists !!");
 		
-		System.out.println("DVD title ");
-		DVD = input.nextLine();
+			System.out.println("DVD title ");
+			DVD = input.nextLine();
 		
-		System.out.println("CD title ");
-		CD = input.nextLine();
+			System.out.println("CD title ");
+			CD = input.nextLine();
 		
-		System.out.println("rental date by Day:");
-		Rental_Date = customer_record[i][4];
+			System.out.println("rental date by Day:");
+			Rental_Date = customer_record[i][4];
 		
-		System.out.println("return date by Day:" + returnDvdCd(Time, Title));
+			System.out.println("return date by Day:" + returnDvdCd(Time, Title));
 		
-				}
-			}
+		}
+	}
 	
 	public static void returnDvdCd(){
 		
@@ -264,24 +266,23 @@ public class DVDRentalSystem {
 		
 		System.out.println("Return DVD/CD - Enter Customer Name: ");
 		name = input.nextLine();
-				if (customer_record[i][0].equals(name) && Return_Date != null) {
-					for(int i = 0; i < 50; i++){
-						
-			System.out.println(customer_record[i][0] + " " + customer_record[i][4]);
-			for(int j = 0; j < 5; j++){
-			Borrowed = customer_record[i][j];
-			System.out.println(customer_record[i][j]);
+		if (customer_record[i][0].equals(name) && Return_Date != null) {
+			for(int i = 0; i < 50; i++){		
+				System.out.println(customer_record[i][0] + " " + customer_record[i][4]);
 			
-			System.out.println("How much is each one: " + customer_record[i][j] + " Overdue?")
-			Overdue = input.nextInt();
-			if()
+				for(int j = 0; j < 5; j++){
+					Borrowed = customer_record[i][j];
+					System.out.println(customer_record[i][j]);
+			
+					System.out.println("How much is each one: " + customer_record[i][j] + " Overdue?")
+					Overdue = input.nextInt();
 				}
 			}
-		}	
+		}
+		
 		System.out.print("Title \t Number of Days Borrowed \t Number of Days Overdue \t Rental Fee");
 		System.out.print(customer_record[i][4] + "\t " + Overdue + "\t " + );
 		
-			}
 		}
 	
 	public static void reportDvdCd(){
@@ -302,7 +303,7 @@ public class DVDRentalSystem {
 	}
 	
 	public void invalidInput(){
-		System.out.println("Invalid inuput !!!");
+		System.out.println("Invalid inuput!!!");
 	}
 	
 }
